@@ -9,10 +9,12 @@
 
 #Mobile tools for Java (J2ME)
 .mtj.tmp/
-
+#properties
+*.properties
 #target files
 target/
-.idea/
+.idea/*
+.iml
 #Package files
 *.jar
 *.war
