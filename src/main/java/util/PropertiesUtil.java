@@ -10,9 +10,13 @@ import java.util.Map;
 import java.util.Properties;
 
 public class PropertiesUtil {
-    public static Map getMysqlConfig() throws IOException {
+    public static Map getMysqlConfig() {
         Properties p = new Properties();
-        p.load(new FileInputStream("src\\main\\resources\\application.properties"));
+        try {
+            p.load(new FileInputStream("src\\main\\resources\\application.properties"));
+        } catch ( Exception e){
+            e.printStackTrace();
+        }
         Map mysqlConfig = new HashMap();
         mysqlConfig.put("jdbc.url", p.getProperty("jdbc.url"));
         mysqlConfig.put("jdbc.username", p.getProperty("jdbc.username"));

@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JDBCUtil {
-    private static String jdbcUrl = "jdbc:mysql://localhost:3306/javaweb?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
-    private static String jdbcUsername = "root";
-    private static String jdbcPassword = "ltc.523321314";
+    private static String jdbcUrl = (String)PropertiesUtil.getMysqlConfig().get("jdbc.url");
+    private static String jdbcUsername = (String)PropertiesUtil.getMysqlConfig().get("jdbc.username");
+    private static String jdbcPassword = (String)PropertiesUtil.getMysqlConfig().get("jdbc.password");
     static void close(ResultSet rs, Statement statement, Connection con){
         try {
             if(rs != null)
